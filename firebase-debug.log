@@ -1,0 +1,51 @@
+[debug] [2025-05-18T13:44:47.934Z] ----------------------------------------------------------------------
+[debug] [2025-05-18T13:44:47.946Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\gundp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2025-05-18T13:44:47.946Z] CLI Version:   14.4.0
+[debug] [2025-05-18T13:44:47.947Z] Platform:      win32
+[debug] [2025-05-18T13:44:47.947Z] Node Version:  v22.15.0
+[debug] [2025-05-18T13:44:47.948Z] Time:          Sun May 18 2025 19:14:47 GMT+0530 (India Standard Time)
+[debug] [2025-05-18T13:44:47.948Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-18T13:44:48.390Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-18T13:44:48.390Z] > authorizing via signed-in user (gundpragati@gmail.com)
+[debug] [2025-05-18T13:44:48.391Z] [iam] checking project studentteacherfinal for permissions ["firebase.projects.get"]
+[debug] [2025-05-18T13:44:48.392Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:48.392Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:48.394Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal:testIamPermissions [none]
+[debug] [2025-05-18T13:44:48.394Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal:testIamPermissions x-goog-quota-user=projects/studentteacherfinal
+[debug] [2025-05-18T13:44:48.394Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-05-18T13:44:49.985Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal:testIamPermissions 200
+[debug] [2025-05-18T13:44:49.985Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-05-18T13:44:49.986Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:49.986Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:49.986Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/studentteacherfinal/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2025-05-18T13:44:49.986Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/studentteacherfinal/services/cloudresourcemanager.googleapis.com x-goog-quota-user=projects/studentteacherfinal
+[debug] [2025-05-18T13:44:51.885Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/studentteacherfinal/services/cloudresourcemanager.googleapis.com 200
+[debug] [2025-05-18T13:44:51.885Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/studentteacherfinal/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2025-05-18T13:44:51.885Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:51.885Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:51.885Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal [none]
+[debug] [2025-05-18T13:44:52.251Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal 200
+[debug] [2025-05-18T13:44:52.251Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/studentteacherfinal {"projectNumber":"581978948377","projectId":"studentteacherfinal","lifecycleState":"ACTIVE","name":"StudentTeacherFinal","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-05-18T12:09:50.187871Z"}
+[info] 
+[info] === Serving from 'D:\project\Student-Teacher-Booking-Appointment'...
+[info] 
+[debug] [2025-05-18T13:44:52.255Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:52.255Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:52.255Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/studentteacherfinal/sites 
+[debug] [2025-05-18T13:44:53.463Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/studentteacherfinal/sites 200
+[debug] [2025-05-18T13:44:53.463Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/studentteacherfinal/sites {"sites":[{"name":"projects/studentteacherfinal/sites/studentteacherfinal","defaultUrl":"https://studentteacherfinal.web.app","appId":"1:581978948377:web:eb53b62470bd2e39a6fb88","type":"DEFAULT_SITE"}]}
+[debug] [2025-05-18T13:44:53.463Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:53.463Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:53.463Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/studentteacherfinal/webApps/1:581978948377:web:eb53b62470bd2e39a6fb88/config [none]
+[debug] [2025-05-18T13:44:54.335Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/studentteacherfinal/webApps/1:581978948377:web:eb53b62470bd2e39a6fb88/config 200
+[debug] [2025-05-18T13:44:54.335Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/studentteacherfinal/webApps/1:581978948377:web:eb53b62470bd2e39a6fb88/config {"projectId":"studentteacherfinal","appId":"1:581978948377:web:eb53b62470bd2e39a6fb88","storageBucket":"studentteacherfinal.firebasestorage.app","apiKey":"AIzaSyCBh9k_OCdNJWq2KGItJWGn031XFKCwMg0","authDomain":"studentteacherfinal.firebaseapp.com","messagingSenderId":"581978948377","measurementId":"G-D1X1T9152G"}
+[debug] [2025-05-18T13:44:54.344Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:54.344Z] Checked if tokens are valid: true, expires at: 1747577644353
+[debug] [2025-05-18T13:44:54.345Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/studentteacherfinal [none]
+[debug] [2025-05-18T13:44:54.942Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/studentteacherfinal 200
+[debug] [2025-05-18T13:44:54.942Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/studentteacherfinal {"projectId":"studentteacherfinal","projectNumber":"581978948377","displayName":"StudentTeacherFinal","name":"projects/studentteacherfinal","resources":{"hostingSite":"studentteacherfinal"},"state":"ACTIVE","etag":"1_0efa33a5-a1de-4719-a92a-78c07ac311fd"}
+[info] i  hosting[studentteacherfinal]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[studentteacherfinal]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [18/May/2025:13:44:58 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [18/May/2025:13:44:58 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [18/May/2025:13:45:05 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [18/May/2025:13:45:05 +0000] \"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1\" 404 187 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\""}}
