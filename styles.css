@@ -1,0 +1,98 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc; /* Light background color */
+  color: #333; /* Dark text for better readability */
+  padding: 20px;
+}
+
+/* Container Styling */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff; /* White background for the form and content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+  border-radius: 8px;
+}
+
+/* Form Styling */
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 14px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px; /* Rounded corners for the button */
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Table for Displaying Appointments */
+#appointments {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures no double borders between cells */
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd; /* Light gray border for cells */
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slight gray for alternating rows */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+/* Responsiveness: Stacks form fields on smaller screens */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+
+  form {
+    margin-bottom: 15px;
+  }
+
+  input, button {
+    font-size: 14px; /* Smaller font size for smaller screens */
+  }
+}

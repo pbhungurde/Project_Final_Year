@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment Booking System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Student-Teacher Appointment System</h1>
+    <form id="appointmentForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" required />
+
+      <label for="teacherName">Teacher Name:</label>
+      <input type="text" id="teacherName" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" required />
+
+      <button type="submit">Book Appointment</button>
+    </form>
+
+    <div id="appointments">
+      <!-- Appointments will be displayed in a table here -->
+    </div>
+  </div>
+
+  <!-- Firebase SDKs from CDN -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+    // Firebase configuration (replace these values with your own)
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBh9k_OCdNJWq2KGItJWGn031XFKCwMg0",
+      authDomain: "studentteacherfinal.firebaseapp.com",
+      projectId: "studentteacherfinal",
+      storageBucket: "studentteacherfinal.firebasestorage.app",
+      messagingSenderId: "581978948377",
+      appId: "1:581978948377:web:eb53b62470bd2e39a6fb88",
+      measurementId: "G-D1X1T9152G"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Reference to the appointments collection in Firestore
+    const appointmentsRef = collection(db, 'appointments');
+
+    // Function to submit an appointment
+    async function submitAppointment(event) {
+      event.preventDefault();  // Prevent form from refreshing the page
+
+      const studentName = document.getElementById('studentName').value;
+      const teacherName = document.getElementById('teacherName').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+
+      try {
+        // Save the appointment to Firestore
+        await addDoc(appointmentsRef, {
+          studentName: studentName,
+          teacherName: teacherName,
+          date: date,
+          time: time
+        });
+
+        // Clear the form
+        document.getElementById('appointmentForm').reset();
+        alert('Appointment added successfully!');
+      } catch (error) {
+        console.error("Error adding appointment: ", error);
+        alert('Error adding appointment. Please try again later.');
+      }
+    }
+
+    // Function to display appointments in a table format
+    function displayAppointments() {
+      const appointmentsDiv = document.getElementById('appointments');
+      
+      // Create table structure
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
+      
+      // Table headers
+      const headerRow = document.createElement('tr');
+      const headers = ['Student Name', 'Teacher Name', 'Date', 'Time'];
+      headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+      
+      // Append table structure
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      appointmentsDiv.innerHTML = '';  // Clear previous content
+      appointmentsDiv.appendChild(table);  // Append the table to the DOM
+
+      // Listen for changes in the appointments collection
+      onSnapshot(appointmentsRef, (snapshot) => {
+        tbody.innerHTML = '';  // Clear previous appointments
+
+        snapshot.forEach((doc) => {
+          const appointment = doc.data();
+          const row = document.createElement('tr');
+          
+          const studentNameCell = document.createElement('td');
+          studentNameCell.textContent = appointment.studentName;
+          row.appendChild(studentNameCell);
+
+          const teacherNameCell = document.createElement('td');
+          teacherNameCell.textContent = appointment.teacherName;
+          row.appendChild(teacherNameCell);
+
+          const dateCell = document.createElement('td');
+          dateCell.textContent = appointment.date;
+          row.appendChild(dateCell);
+
+          const timeCell = document.createElement('td');
+          timeCell.textContent = appointment.time;
+          row.appendChild(timeCell);
+
+          // Append the row to the table body
+          tbody.appendChild(row);
+        });
+      });
+    }
+
+    // Attach event listener to the form
+    document.getElementById('appointmentForm').addEventListener('submit', submitAppointment);
+
+    // Call the displayAppointments function to initially display any existing appointments
+    displayAppointments();
+  </script>
+</body>
+</html>
